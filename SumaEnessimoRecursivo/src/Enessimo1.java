@@ -1,4 +1,4 @@
-package SumaEnessimo.src;
+package SumaEnessimoRecursivo.src;
 
 import java.util.Scanner;
 

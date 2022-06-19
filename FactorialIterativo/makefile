@@ -2,7 +2,7 @@ compilar:limpiar
 	mkdir bin
 	find src -name *.java | xargs javac -cp bin -d bin	
 ejecutar:compilar
-	java -cp bin SumaEnessimo.src.Enessimo1
+	java -cp bin FactorialIterativo.src.Factorial2
 limpiar:
 	rm -rf bin
 jar:compilar
