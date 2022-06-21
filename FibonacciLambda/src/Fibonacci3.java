@@ -1,8 +1,9 @@
 package FibonacciLambda.src;
 
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
 import java.util.function.IntFunction;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Fibonacci3 {
 
@@ -11,6 +12,7 @@ public class Fibonacci3 {
         System.out.println("Introduzca un numero: ");
         int n = sc.nextInt();
         System.out.println("El fibonacci de " + n + " es: " + fibonacci(n));
+        System.out.println(lista(n));
         sc.close();
     }
     public static int fibonacci(int n){
@@ -25,6 +27,18 @@ public class Fibonacci3 {
             }
         };
         return integerIntFunction.apply(n);
+
+    }
+
+    public static int lista(int args) {
+        String collect = Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
+                .limit(10)
+                .map(t -> t[0])
+                .map(String::valueOf) // convert to string
+                .collect(Collectors.joining(", "));
+
+        System.out.println("Result : " + collect);
+        return collect.length();
     }
 }
 
