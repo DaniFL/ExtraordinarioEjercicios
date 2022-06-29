@@ -2,7 +2,7 @@ compilar:limpiar
 	mkdir bin
 	find src -name *.java | xargs javac -cp bin -d bin	
 ejecutar:compilar
-	java -cp bin MediaIterativo.src.Media2
+	java -cp bin MCDLambda.src.Mcd3
 limpiar:
 	rm -rf bin
 jar:compilar
